@@ -4,7 +4,17 @@
 
 <a href="https://badge.fury.io/nu/Dapper.Abstractions"><img src="https://badge.fury.io/nu/Dapper.Abstractions.svg" alt="NuGet version" height="18"></a>
 
-Support for .NET Standard 2.0 and .NET 6.0
+Support for .NET Standard 2.0, .NET 6.0 and .NET 8.0
+
+### **Breaking Change Notice**
+
+We have introduced a breaking change in the release 4.x to improve the modularity and flexibility of our codebase. As part of this update, we have separated the SQL Client from `Dapper.Abstractions` into its own package, `Dapper.Abstractions.Sql`.
+
+#### Impact:
+- Users will need to update their code to use the new `Dapper.Abstractions.Sql` package instead of the `Dapper.Abstractions` package to continue utilizing the SQL Client functionality that was previously part of `Dapper.Abstractions`.
+
+
+# Introduction
 
 Dapper.Abstractions is a fork of DapperWrapper and is a library that wraps the [Dapper](https://github.com/StackExchange/dapper-dot-net) extension methods on `IDbConnection` to make unit testing easier.
 
@@ -51,6 +61,7 @@ In Program.cs
 
 ```C#
 using Dapper.Abstractions;
+using Dapper.Abstractions.Sql;
 
 var builder = WebApplication.CreateBuilder(args);
 ...
@@ -66,6 +77,7 @@ builder.Services.AddSingleton<IDbExecutorFactory>(dbExecutorFactory);
 
 ```C#
 using Dapper.Abstractions;
+using Dapper.Abstractions.Sql;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -78,6 +90,7 @@ using IHost host = Host.CreateDefaultBuilder(args)
 or
 ```C#
 using Dapper.Abstractions;
+using Dapper.Abstractions.Sql;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 

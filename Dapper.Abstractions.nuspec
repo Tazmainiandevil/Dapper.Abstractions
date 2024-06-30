@@ -12,13 +12,14 @@
     <tags>tazmainiandevil Dapper wrapper dapperwrapper abstractions dapper.abstractions IdbConnection database sql testability mock unit testing</tags>
     <releaseNotes>$releaseNotes$</releaseNotes>
     <dependencies>
-      <dependency id="Dapper" version="2.0.123" />
+      <dependency id="Dapper" version="2.1.35" />
     </dependencies>
   </metadata>
   <files>
     <file src="LICENSE.txt" target="" />
+    <file src="Readme.md" target="docs\" />
     <file src="src\Dapper.Abstractions\bin\Release\netstandard2.0\Dapper.Abstractions.dll" target="lib\netstandard2.0\Dapper.Abstractions.dll" />
     <file src="src\Dapper.Abstractions\bin\Release\net6.0\Dapper.Abstractions.dll" target="lib\net6.0\Dapper.Abstractions.dll" />
-    <file src="src\Dapper.Abstractions\bin\Release\net7.0\Dapper.Abstractions.dll" target="lib\net7.0\Dapper.Abstractions.dll" />
+    <file src="src\Dapper.Abstractions\bin\Release\net8.0\Dapper.Abstractions.dll" target="lib\net8.0\Dapper.Abstractions.dll" />
   </files>
 </package>
